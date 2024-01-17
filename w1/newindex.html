@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <meta name="author" content="Romina Florentino" >
-    <meta name="description" content="Week 2 Demo" >
+    <meta name="description" content="Week 1 First Web Page" >
     
-    <title>Document</title>
+    <title>Romina's Web Page</title>
 
     <!--in document styling-->
     <style>
@@ -30,7 +30,7 @@
         /*by ELEMENT*/
         div {
             /*all div elements will have the below styles*/
-            border:1px solid black;
+            border:1px solid yellow;
             margin: 10px; /*adds space between border and other elements, all 4 sides*/
             padding:10px; /*adds space between element content & border, all 4 sides*/
         }
@@ -39,7 +39,7 @@
 
         #header {
             /*by #id name*/
-            border:3px solid blue;
+            border:3px solid violet;
         }
 
         /*by CLASS*/
@@ -51,7 +51,7 @@
     </style>
 
 </head>
-<body style="background-color:lightgrey">
+<body>
     <!--WRAPPER -wraps around all content-->
     <div id="wrapper">
         
@@ -64,70 +64,10 @@
         
         </div>
         
-        <!--NAV BAR-->
-        <div id="nav">
-
-        <!--external links: links outside of our website-->
-        <a href="https://www.meca.edu" target="_blank">Visit MECA!</a>
-
-        <br> <!--this makes it so the two links we have appear on diff lines in actual output-->
-
-        <!--internal links: links to pages inside of our site (relative paths)-->
-        <a href="text.txt">Open my Text Files</a>
-
-        <br>
-
-        <!--internal JUMP links: jumps to a section based on #id in current page-->
-        <a href="#bio">BIO</a>
-        <a href="#schools">SCHOOLS</a>
-        <a href="#hobbies">HOBBIES</a>
-
-        <br>
-
-        <a href="#footer">Bottom of Page !</a>
-    
-    </div>
         <!--BIO-->
         <div id="bio">
-            <h2>My Bio - All About ME</h2>
 
             <p>Can a man still be <b>brave</b> if he’s afraid? That is the <i>only time</i> a man can be brave.A forked purple lightning bolt, on black field speckled with four-pointed stars. Winter is coming. You know nothing, Jon Snow. Pay the iron price. Unbowed, Unbent, Unbroken. It's <b><u>ten thousand miles</u></b> between Kings landing and the wall. It's ten thousand miles between Kings landing and the wall. </p> <!--word wrap hot key is alt+z-->
-
-        </div>
-
-        <!--SCHOOLS-->
-        <div id="schools">
-            <h2>My Schooling</h2>
-
-            <!--ordered list-->
-            <ol>
-                <li>NEIT - MSIT - 2023</li>
-                <li>MECA - BFA, <i>Photography</i> - 2???</li>
-                <li>USM - media studies electives</li>
-            </ol>
-
-            <!--IMAGES: require src and alt attributes-->
-
-            <!--ABSOLUTE PATHS: using images from other sites -- AVOIDDDDDDDDD!!!!!!!!!!! -->
-            <img src="https://singifyai.fineshare.com/song-ai/covers/patrick-star.webp" alt="Patrick Star from the show Spongebob Squarepants looking at the camera with a straight or unimpressed face.">
-
-            <!--RELATIVE PATHS: using images from current site's root folder-->
-            <img src="images/stormsEnd.jpg" alt="proteous building at sunset" width="500">
-
-        </div>
-        <!--HOBBIES-->
-        <div id="hobbies">
-
-            <h2>Things I Like to Do</h2>
-
-            <!--unordered list-->
-            <ul>
-                <li>GAME OF THRONES</li>
-                <li>Reading</li>
-                <li> Hang out with pets</li>
-            </ul>
-
-            <img src="images/stormsEnd.jpg" alt="Storm's End Castle" width =500>
 
         </div>
 
@@ -142,6 +82,7 @@
         
         </div>
 
-</div><!--/ #wrapper-->
+</div>
+<!--/ #wrapper-->
 </body>
 </html>
