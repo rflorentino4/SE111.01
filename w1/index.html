@@ -3,20 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SE111 | W1</title>
-    <meta name="description" content="Week 1">
-    <meta name="author" content="Romina Florentino">
+    <meta name="author" content="Romina Florentino" >
+    <meta name="description" content="Week 1 First Web Page" >
+    
+    <title>Romina's Web Page</title>
+
+    <!--in document styling-->
     <style>
-    .myDiv {
-        border:3px solid blue;
-        border-collapse:separate;
-        border-spacing: 30px;
-    }
-</style>
+
+        /*in here we write CSS*/
+
+        /*SELECTING ELEMENTS in CSS & JS
+
+            selection {
+                property:value;
+                property:value;
+            }
+
+            WAYS TO SELECT:
+                *by ELEMENT type (all elements of type are styled)
+                *by ID name (only that element is styled)
+                *by CLASS name (only elements in that class are styled)
+        */
+
+        /*by ELEMENT*/
+        div {
+            /*all div elements will have the below styles*/
+            border:3px solid blue;
+            margin:10px; /*adds space between border and other elements, all 4 sides*/
+            padding:10px; /*adds space between element content & border, all 4 sides*/
+        }
+
+        /*by ID*/
+
+        #header {
+            /*by #id name*/
+            border:3px solid violet;
+        }
+
+        #bio {
+            /*by #id name*/
+            border:3px solid green;
+        }
+        
+    </style>
+
 </head>
 <body>
-    <div class="myDiv">
-    <h1 style="border:3px solid violet;"><span style="color:red">Romina Florentino</h1> 
-    <p style="border:3px solid green;">I am from Pawtucket, <b>Rhode Island</b>. I love listening to <i>music</i> and <i>playing video games</i>. I have three pets: <u>two cats</u> and a <u>ferret</u>. I chose cybersecurity as my major because it seems like a promising career. I had no experience with coding before this. My favorite color is <span style="color:rgb(144, 63, 194);">purple</span> :]</p>
+    <!--WRAPPER -wraps around all content-->
+    <div id="wrapper">
+
+        <!--HEADER-->
+        <div id="header" class="bg" style="text-align:center">
+            
+            <h1 style="color:red">Romina Florentino</h1>
+        
+        </div>
+        
+        <!--BIO-->
+        <div id="bio" style="text-align:center">
+            
+            <p>I am from Pawtucket, <b>Rhode Island</b>. I love listening to <i>music</i> and <i>playing video games</i>. I have three pets: <u>two cats</u> and a <u>ferret</u>. I chose cybersecurity as my major because it seems like a promising career. I had no experience with coding before this... My favorite color is <span style="color:rgb(144, 63, 194);">purple</span> :] A fun fact about me is that I don't really like sweets. </p> 
+
+        </div>
+</div>
 </body>
 </html>
