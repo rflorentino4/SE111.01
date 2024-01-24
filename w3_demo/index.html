@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Romina Florentino">
+    <meta name="description" content="Week 3 Multi-Page Bio">
+
+    <title>Week 3 Multi-Page Bio</title>
+
+    <!--in document styling - always at the top so that the browser knows how to display/faster -- affects THE ENTIRE PAGE-->
+    <style>
+        /*we write in CSS +++ semi-colons are used to separate multiple CSS declarations -not always needed but good for organization*/
+        div { /*this affects ALL DIVS you have on the page*/ /*could do div { a, h1, etc etc. so like specific areas you want this to effect*/
+            border:1px solid black;
+            padding:10px;
+            margin:10px;
+        }
+
+        #wrapper { /*CSS by header #id*/
+            background-color:rgb(228, 205, 235); /*this is line 20's child, so unless stated, it will inherit all properties you applied to the parent aka #wrapper*/
+            text-align:center;
+        }
+
+        .bg { /*this applies to class bg*/
+            background-color:rgb(104, 42, 134);
+            color:rgb(241, 255, 240);
+        }
+
+        #footer , #header {
+            border:3px solid black;
+        }
+
+        .pics { /*not actually used here, but useful stuff that she used on her published demo for shadows on images -> class so must state it b4 it can be applied*/
+            width:500px;
+            padding:10px;
+            box-shadow:0 0 8px black; /*drop shadow*/
+        }
+
+        .backofmain {
+            background-color:rgb(243, 228, 114);
+        }
+
+    </style>
+</head>
+<body>
+    <!--#wrapper-------------------------------------------->
+    <div id="wrapper">
+
+        <!--#header----------------------------------------->
+        <div id="header" class="border bg"> <!--#ids cannot be reused on the same page, but classes can!!! creates a subgroup-->
+            <h1 id="title">Joel Miller</h1>
+            <h2 id="subtitle">The hero & heart throb of <i>The Last of Us</i></h2>
+
+        </div> <!--end #header-->
+
+        <!--#nav-------------------------------------------->
+        <div id="nav">
+            <!--internal links: pages inside of website-->
+            <!--RELATIVE PATHS-->
+            <a href="index.html">| &nbsp;HOME&nbsp; |</a> <!--&nbsp; creates a blank space that will not break into a new line-->
+            <a href="places.html">| PLACES |</a>
+            <a href="people.html">| PEOPLE |</a>
+            <br>
+            <!--internal JUMP links: jumps to section based on #id of current page-->
+            <a href="#footer">BOTTOM OF PAGE</a>
+
+            <br>
+            <!--external links: pages outside of website-->
+            <!--ABSOLUTE PATHS-->
+            <a href="https://www.hbo.com/the-last-of-us" target="_blank">| Official HBO Site |</a> <!--default for browsers is going to INDEX FILE, ALWAYS, unless otherwise stated in the absolute path +++ target="_blank" makes it so that you open the link in a new tab-->
+
+        </div> <!--end #nav-->
+
+        <!--#page-content------------------------------------>
+        <div id="page-content" class="backofmain">
+            <h2><u>ABOUT</u></h2> <!--I think she took this out*********-->
+
+        </div> <!--end #page-content-->
+
+        <div id="footer" class="border bg">
+            
+            <a href="#header">BACK TO TOP</a>
+            <p>&copy;K TRUCHON | SE111 | 202420</p>
+
+            <img class=pics src="images/ImageValidThreeDemo.png" alt="Home Page Validation Screenshot" width="100%">
+
+        </div> <!--end #footer-->
+
+    </div>
+
+</body>
+</html>
