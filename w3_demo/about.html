@@ -10,7 +10,7 @@
 
     <!--in document styling - always at the top so that the browser knows how to display/faster -- affects THE ENTIRE PAGE-->
     <style>
-        /*we write in CSS +++ semi-colons are used to separate multiple CSS declarations from overlapping/not working*/
+        /*we write in CSS +++ semi-colons are used to separate multiple CSS declarations -not always needed but good for organization*/
         div { /*this affects ALL DIVS you have on the page*/ /*could do div { a, h1, etc etc. so like specific areas you want this to effect*/
             border:1px solid black;
             padding:10px;
@@ -31,14 +31,14 @@
             border:3px solid black;
         }
 
-        .pics { /*ADD THIS TO ALL PICTURES -> KT used it on her published demo and it looks cool*/
+        .pics { /*not actually used here, but useful stuff that she used on her published demo for shadows on images -> class so must state it b4 it can be applied*/
             width:500px;
             padding:10px;
             box-shadow:0 0 8px black; /*drop shadow*/
         }
 
         .backofmain {
-            background-color:rgb(215, 102, 175);
+            background-color:rgb(114, 183, 243);
         }
 
     </style>
@@ -64,22 +64,22 @@
             <a href="hobbies.html">| HOBBIES |</a>
             <br>
             <!--internal JUMP links: jumps to section based on #id of current page-->
-            <a href="#footer">Bottom of Page</a>
+            <a href="#footer">BOTTOM OF PAGE</a>
 
             <br>
-            <!--external links: pages outside of website-->
-            <!--ABSOLUTE PATHS-->
-            <a href="https://youtu.be/6FlnXDIbmXA?si=nYMAw00u5QBTMmG2" target="_blank">| What's on Loop |</a> <!--default for browsers is going to INDEX FILE, ALWAYS, unless otherwise stated in the absolute path +++ target="_blank" makes it so that you open the link in a new tab-->
-
+            
         </div> <!--end #nav-->
 
         <hr>
 
         <!--#page-content------------------------------------>
         <div id="page-content" class="backofmain">
-            <h2><u>&#9924; HOME PAGE &#9924;</u></h2> 
+            <h2><u><span style=color:rgb(255,248,41)>&#10025; </span> ABOUT <span style=color:rgb(255,248,41)>&#10025; </span></u></h2>
+            <p>I am 17 years old and a Cybersecurity major. I live at home with my mom and my older brother. We have three pets: 2 <i>cats</i> and a <b>ferret</b>. I love listening to music, at all points of the day. I feel like music is magical; it has healing powers. I'm currently going down the "indie-rock" rabbit hole, they've been playing it nonstop at my job and some of these songs are wonderful. For the most part, though, I listen to a lot of latin and rap music. <br> <br> I love playing video games as a fun pastime. In particular, I enjoy playing shooter and co-op (team) games. March officially marks one year since I've started going to the gym. It's allowed me to get closer with my brother which I'm incredibly grateful for. It's also helped me work on my mental health, something I needed to start prioritising. <br>I can speak two languages: English and Spanish! My main inspiration in life is my <span style=color:rgb(184,2,2)>mother</span>, I owe it all to her.  
 
-            <img class=pics src="images/Mina/burgerkingmina.jpg" alt="Baby Mina wearing her Burger King hat holding a phone" width="100">
+            </p>
+
+            <img class=pics src="images/Family/treschiflados.jpg" alt="My brother on the left, mom in the middle, and me on the right" width="100">
 
         </div> <!--end #page-content-->
 
@@ -87,10 +87,10 @@
 
         <div id="footer" class="border bg">
             
-            <a href="#header">Back to the Top</a>
+            <a href="#header">BACK TO TOP</a>
             <p>&copy;Romina Florentino | SE111 | 202420</p>
 
-            <img class=pics src="images/Validation/W3_HOME.png" alt="Validation picture" width="100">
+            <img class=pics src="images/Validation/W3_ABOUT.png" alt="Validation Picture" width="100">
 
         </div> <!--end #footer-->
 

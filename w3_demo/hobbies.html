@@ -23,7 +23,7 @@
         }
 
         .bg { /*this applies to class bg*/
-            background-color:rgb(104, 42, 134);
+            background-color:rgb(112, 63, 137);
             color:rgb(241, 255, 240);
         }
 
@@ -33,13 +33,12 @@
 
         .pics { /*not actually used here, but useful stuff that she used on her published demo for shadows on images -> class so must state it b4 it can be applied*/
             width:500px;
-            margin-left:200px;
             padding:10px;
             box-shadow:0 0 8px black; /*drop shadow*/
         }
 
         .backofmain {
-            background-color:rgb(243, 114, 206);
+            background-color:rgb(221, 165, 243);
         }
 
     </style>
@@ -50,8 +49,8 @@
 
         <!--#header----------------------------------------->
         <div id="header" class="border bg"> <!--#ids cannot be reused on the same page, but classes can!!! creates a subgroup-->
-            <h1 id="title">Joel Miller</h1>
-            <h2 id="subtitle">The hero & heart throb of <i>The Last of Us</i></h2>
+            <h1 id="title">Romina Florentino</h1>
+            <h2 id="subtitle">"Finding comfort in being uncomfortable"</h2>
 
         </div> <!--end #header-->
 
@@ -60,34 +59,46 @@
             <!--internal links: pages inside of website-->
             <!--RELATIVE PATHS-->
             <a href="index.html">| &nbsp;HOME&nbsp; |</a> <!--&nbsp; creates a blank space that will not break into a new line-->
-            <a href="places.html">| PLACES |</a>
-            <a href="people.html">| PEOPLE |</a>
+            <a href="about.html">| ABOUT |</a>
+            <a href="schools.html">| SCHOOLS |</a>
+            <a href="hobbies.html">| HOBBIES |</a>
             <br>
             <!--internal JUMP links: jumps to section based on #id of current page-->
             <a href="#footer">BOTTOM OF PAGE</a>
 
             <br>
-            <!--external links: pages outside of website-->
-            <!--ABSOLUTE PATHS-->
-            <a href="https://www.hbo.com/the-last-of-us" target="_blank">| Official HBO Site |</a> <!--default for browsers is going to INDEX FILE, ALWAYS, unless otherwise stated in the absolute path +++ target="_blank" makes it so that you open the link in a new tab-->
-
+        
         </div> <!--end #nav-->
+
+        <hr>
 
         <!--#page-content------------------------------------>
         <div id="page-content" class="backofmain">
-            <h2><u>PLACES</u></h2> <!--I think she took this out*********-->
+            <h2><u><span style=color:rgb(188,0,78)>&#10086; </span> HOBBIES <span style=color:rgb(188,0,78)>&#10086; </span></u></h2> 
+
+            <!--Unordered list of interests-->
+
+            <ul>
+                <li>Listening to music</li>
+                <li>Playing video games</li>
+                <li>Spending an unhealthy amount of time on Pinterest curating future outfits</li>
+                <li>Watching <em>anime</em>&#10071;</li>
+                <li>Daydreaming (at this point it's my full-time job)</li>
+            </ul>
+          
+
+            <img class=pics src="images/Hobbies/gintama.jpg" alt="Gintama the anime" width="450">
 
         </div> <!--end #page-content-->
+
+        <hr>
 
         <div id="footer" class="border bg">
             
             <a href="#header">BACK TO TOP</a>
-            <p>&copy;K TRUCHON | SE111 | 202420</p>
+            <p>&copy;Romina Florentino | SE111 | 202420</p>
 
-            <!--IMAGE OF VALIDATION-uncomment out @ end-->
-        <!--
-            <img src="" alt="Home Page Validation Screenshot" width="100%">
-        -->
+            <img class=pics src="images/Validation/W3_HOBBIES.png" alt="Validation Picture" width="100">
 
         </div> <!--end #footer-->
 
