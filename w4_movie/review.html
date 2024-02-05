@@ -7,12 +7,54 @@
     <meta name="author" content="Romina Florentino">
     <meta name="description" content="Week Four Movie Assignment">
 
-    <title>W4 | Demo</title>
+    <title>W4 &#9924; Movie Assignment</title>
 
-    <!--in document styling-->
-    <style>
+<!--in document styling-->
+<style>
+    body {
+        margin: 0;
+        background-color: #2d3236;
+    }
+
+    #wrapper {
+        width:1000px;
+        height:100%;
+        margin:auto;
+        background-color:rgb(142, 171, 189);
+        text-align:center;
+        padding:1em;
+        
+    }
+    .button {
+        border: none;     
+        padding: 16px 32px;
+        text-align: center;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+
+    .button5 {
+        background-color: #d8dddc;
+        color: #a42444;
+        border: 2px solid #555555;
+    }
+
+    .button5:hover {
+        background-color: #a42444;
+        color: rgb(45, 50, 54);
+    }
+
+    .pics { /*ADD THIS TO ALL PICTURES -> KT used it on her published demo and it looks cool*/
+            width:500px;
+            padding:10px;
+            box-shadow:0 0 8px black; /*drop shadow*/
+        }
 
     </style>
+
 </head> <!--you can collapse entire element by clicking on arrow left of it-->
 <body> <!--all content goes here-->
     <!--start #wrapper/container-->
@@ -28,9 +70,9 @@
         <!--start #nav-->
         <div id="nav">
             <!--internal page links: RELATIVE PATHS-->
-            <a href="index.html">HOME</a>
-            <a href="cast.html">CAST</a>
-            <a href="review.html">REVIEW</a>
+            <a href="index.html" class="button button5">HOME</a>
+            <a href="cast.html" class="button button5">CAST</a>
+            <a href="review.html" class="button button5">REVIEW</a>
 
         </div><!--end #nav-->
         <!--block elements take up the full width available whereas inline uses what's necessary and can co-exist in the same line-->
