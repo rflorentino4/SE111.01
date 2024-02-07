@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Romina Florentino">
+    <meta name="description" content="W5D2 in class DEMO">
+
+    <title>W5 | Tables & Forms</title>
+
+    <style>
+        table, td {
+            border:1px solid black; /*do this to check if everything is coming out right*/
+        }
+
+    </style>
+</head>
+<body>
+    
+    <h1>Basic Form Demo</h1>
+
+    <form> <!--ALWAYS the outermost element of the build, tables go inside-->
+
+        <!--labels are used to match with input elements-->
+        <!--'for' attribute connects labels with the input values (matching 'name' atttribute value)-->
+
+        <label for="firstName">First Name: </label>
+        <input type="text" name="firstName" id="firstName">
+
+        <br>
+
+        <label for="lastName">Last Name: </label>
+        <input type="text" name="lastName" id="lastName">
+
+        <br>
+
+        <label for="age">Age: </label>
+        <input type="text" name="age" id="age">
+
+
+    </form>
+
+    <hr>
+
+
+    <h2>Form using a Table</h2>
+
+    <form method="GET" action="confirm.html"> <!--POST is more secure than GET, but it requires a server to send data to-->
+
+        <table>
+            <!--the thead handles column headers/labels for columns-->
+            <thead>
+
+                <tr> <!--a new row-->
+                    <td> <!--left column - questions/labels-->
+                        <h2>Questions</h2>
+
+                    </td>
+                    <td> <!--right column - answers/inputs-->
+                        <h2>Answers</h2>
+
+                    </td>
+                </tr>
+
+            </thead>
+            <!--the thead handles column headers/labels for columns-->
+
+            <!--tbody ALWAYS holds main form fields (all inputs, maybe with exception of the submit button) -> REQUIRED-->
+            <tbody>
+
+                <!--Table Row-->
+                <tr>
+
+                    <!--first column - LABEL -->
+                    <td>
+                        <label for="fName">First Name:</label>
+                    </td>
+
+                    <!--second column- INPUT -->
+                    <td>
+                        <input type="text" name="fName" id="fName" placeholder="Jane"> <!--shows up as GREY TEXT -> addition level of helping the user fill out a form CORRECTLY-->
+                    </td>
+
+                </tr>
+
+                <!--Table Row-->
+                <tr>
+
+                    <!--first column - LABEL -->
+                    <td>
+                        <label for="lName">Last Name:</label>
+                    </td>
+
+                    <!--second column- INPUT -->
+                    <td>
+                        <input type="text" name="lName" id="lName" placeholder="Doe">
+                    </td>
+
+                </tr>
+
+                <!--Table Row-->
+                <tr>
+
+                    <!--first column - LABEL -->
+                    <td>
+                        <label for="age">Age:</label>
+                    </td>
+
+                    <!--second column- INPUT -->
+                    <td>
+                        <input type="number" name="age" id="age" min="0" max="150"> <!--input type tells you all the possible options you can have for the user to utilize ->number, dropdown, checkbox, color, etc.-->
+                        <!--extra attributes you can add are min and max to ensure user cannot submit the wrong answers -will literally tell them or just not allow them to submit-->
+                    </td>
+
+                </tr>
+
+                <tr> <!--DROPDOWN MENU new row -- works similar to a list element (ol or ul) and has a containing element with options-->
+                    <td> <!--left column - questions/labels-->
+                        <label for="faveColor">Pick your favorite color:</label>
+                    </td>
+
+                    <td> <!--right column - answers/inputs-->
+                        <select name="faveColor"> <!--you don't use input for a dropdown menu, you use this because now you gotta enter possible option values--> <!--not the proper way to build a dropdown for navigation - you use styling and CSS for that, what we're doing below is just for form aesthetic-->
+                            <option value="r" style="color:red">RED</option> <!--when we choose "RED" on the site, which is what shows up for the user, to the computer, we chose "r"-->
+                            <option value="b" style="color:blue">BLUE</option>
+                            <option value="pu" style="color:purple">PURPLE</option>
+                            <option value="pi" style="color:pink">PINK</option>
+                            <option value="g" style="color:green">GREEN</option>
+
+                        </select>
+                    </td>
+                </tr>
+
+                <tr> <!--RADIO BUTTONS-multiple choice row -> give you validation errors, we aren't sure why --- when the name values match, and you are using a radio type, the user is restricted to only choosing one from the set-->
+                    <td> <!--left column - questions/labels-->
+                        <label for="study">Program of Study:</label>
+                    </td>
+
+                    <td> <!--right column - answers/inputs-->
+                        <input type="radio" name="study" id="study1" value="SE"><label for="study1">Software Engineering</label> <br>
+                        <input type="radio" name="study" id="study2" value="WD"><label for="study2">Web Development</label> <br>
+                        <input type="radio" name="study" id="study3" value="CYB"><label for="study3">Cybersecurity</label> <br>
+                        <input type="radio" name="study" id="study4" value="NE"><label for="study4">Networking</label>
+
+                    </td>
+                </tr>
+
+                <tr> <!--TEXTAREA tag -for comment boxes --new row-->
+                    <td> <!--left column - questions/labels-->
+                        <label for="comments">Comments:</label>
+                    </td>
+
+                    <td> <!--right column - answers/inputs-->
+                        <textarea name="comments" id="comments" placeholder="Open the gym earlier!" rows="3" cols="20" maxlength="100"></textarea> <!--rows adds more rows to specific section, cols changes width + maxlength restricts the amt of characters-->
+                    </td>
+
+                </tr>
+
+                <tr> <!--CHECKBOXES - allows user to select multiple items-->
+                    <!--one input AND one label for EACH item-->
+                    <td> <!--left column - questions/labels-->
+                        <p>Pick your favorite vehicles:</p>
+                    </td>
+
+                    <td> <!--right column - answers/inputs-->
+                       <input type="checkbox" name="vehicle1" value="car" id="vehicle1"><label for="vehicle1">Car</label><br>
+                       <input type="checkbox" name="vehicle2" value="bike" id="vehicle2"><label for="vehicle2">Bike</label><br>
+                       <input type="checkbox" name="vehicle3" value="lambo" id="vehicle3"><label for="vehicle3">Lambo</label><br>
+                       <input type="checkbox" name="vehicle4" value="motorcycle" id="vehicle4"><label for="vehicle4">Motorcycle</label><br>
+
+                    </td>
+
+                    <tr> <!--EMAIL - will look like a text box-->
+                        <td> <!--left column - questions/labels-->
+                            <label for="email">Email:</label>
+                        </td>
+    
+                        <td> <!--right column - answers/inputs-->
+                          <input type="email" name="email" id="email" required> <!--for the required element, its presence ISSS the requirement, no need to assign it a value you just state REQUIRED-->
+                        </td>
+
+                <tr> <!--DATE-->
+                    <td> <!--left column - questions/labels-->
+                        <label for="date">Date:</label>
+                    </td>
+
+                    <td> <!--right column - answers/inputs-->
+                        <input type="date" name="date" id="date" min="2024-01-01" required>
+                    </td>
+
+                <tr> <!--SUBMIT BUTTON row-->
+                    <td> <!--left column - questions/labels-->
+
+                    </td>
+
+                    <td> <!--right column - answers/inputs-->
+                        <input type="submit" value="SUBMIT :]"> <!--submit ;] is what shows up on actual site-->
+                    </td>
+                </tr>
+
+
+            </tbody>
+
+        </table>
+<!--keep in mind, even if one section won't have a response to a specific row, you still include it BC if not, the table will "fix itself" and substitute that blank space with the next column -> client has no email but yes phone #, so if you delete email box phone # might scoot into that area-->
+<!--after one answers a form -> ur url changes to include the new query string of answers -> it shows up after the "?"-->
+<!--%3f = question mark -can't use it on a form bc it already has a job-->
+<!--MAKE SURE YOU USE THE FILE SHE POSTED BC IT ACTUALLY HAS A CONFIRM.HTML PAGE !!!!!!!!! + CHECK THE RED NOTES-->
+<!--the value of the "for" attribute of the "label" element must be the ID of a non-hidden form control ERROR CODE IS OKAY -> 2 codes in demo idk how many will be in actual HW assignment ->>> erros related to ID is okay, the rest of the page should validate-->
+    </form>
+
+
+</body>
+</html>
