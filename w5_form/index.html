@@ -11,49 +11,220 @@
     <link type="text/css" rel="stylesheet" href="style.css">
 
     <title>W5 &#9924; Tables and Forms</title>
+
+    <style> /*CSS styling*/
+    body {
+        background-color:rgb(168, 135, 189);
+        text-align:center;
+    }
+
+    tr {
+        background-color: rgb(246, 232, 255);
+    }
+
+    .center {
+        margin-left: auto;
+        margin-right:auto;
+    }
+    </style>
+
 </head>
 <body>
-    <!--Build Table and Form here-->
+    <!--BIG TITLE of entire form-->
     <h1>Birthday Party Registration</h1>
+    <form method="GET" action="confirm.html">
 
-    <form>
-        <table>
+    
+        <table class="center">
             <thead>
                 <tr> <!--new row-->
-                    <td> <!--left column-->
+                    <td> <!--left side big label-->
                         <h2>Labels</h2>
                     </td>
-                    <td> <!--right column-->
+                    <td> <!--right side big label-->
                         <h2>Form Fields</h2>
                     </td>
                 </tr>
             </thead>
                 
-            <tbody>
+
+            <tbody> <!--rest of work goes in here-->
+
+                <!--PARENT/GUARDIAN NAME-->
                 <tr> <!--new row-->
                     <td> <!--new column-->
-                        <label for="gFirst">First Name:</label>
+                        <label for="gFirst">Parent/Guardian Name:</label>
                     </td>
                     <td> <!--new column-->
-                        <input type="text" name="gFirst" id="gFirst" placeholder="Luke" required maxlength="20">
+                        <input type="text" name="gFirst" id="gFirst" placeholder="First Name" required maxlength="20">
+
+                    <br>
+
+                        <input type="text" name="gLast" id="gLast" placeholder="Last Name" required maxlength="20">
+                    </td>
+                </tr>
+
+                
+                <!--CHILD'S NAME-->
+                <tr> <!--new row-->
+                    <td> <!--new column-->
+                        <label for="cFirst">Child's First Name:</label>
+                    </td>
+                    <td> <!--new column-->
+                        <input type="text" name="cFirst" id="cFirst" placeholder="Child's First Name" required maxlength="20">
                     </td>
                 </tr>
 
 
+                <!--CHILD'S AGE-->
+                <tr> <!--new row-->
+                    <td> <!--new column-->
+                        <label for="age">Child's Age:</label>
+                    </td>
+                    <td> <!--new column-->
+                        <input type="number" name="age" id="age" placeholder="5" required min="0">
+                    </td>
+                </tr>
+
+
+                <!--DATE AND TIME LABEL-->
+                <tr> <!--new row-->
+                    <td> <!--new column-->
+                        <h2>Date and Time</h2>
+                    </td>
+                    <td></td>
+                </tr>
+
+
+                <!--DATE INFO-->
+                <tr> <!--new row-->
+                    <td> <!--new column-->
+                        <label for="date">Date:</label>
+                    </td>
+                    <td> <!--new column-->
+                        <input type="date" name="date" id="date" required>
+                    </td>
+                </tr>
+
+
+                <!--TIME INFO-->
+                <tr> <!--new row-->
+                    <td> <!--new column-->
+                        <label for="time">Start Time:</label>
+                    </td>
+                    <td> <!--new column-->
+                        <input type="time" name="time" id="time" required>
+                    </td>
+                </tr>
+
+
+                <!--GUEST INFO-->
+                <tr> <!--new row-->
+                    <td> <!--new column-->
+                        <label for="guests">Number of Guests:</label>
+                    </td>
+                    <td> <!--new column-->
+                        <input type="number" name="guests" id="guests" placeholder="4" min="0">
+                    </td>
+                </tr>
+
+
+                <!--FOOD LABEL-->
+                <tr> <!--new row-->
+                    <td> <!--new column-->
+                        <h2>Food</h2> 
+                    </td>
+                    <td></td>
+                </tr>
+
+
+                <!--SIZE INFO-->
+                <tr> <!--new row-->
+                    <td> <!--new column-->
+                        <label for="guests">Size:</label>
+                    </td>
+                    <td> <!--new column-->
+                        <input type="radio" name="size" id="size1" value="sm"><label for="size1">Small</label> <br>
+                        <input type="radio" name="size" id="size2" value="md"><label for="size2">Medium</label> <br>
+                        <input type="radio" name="size" id="size3" value="lg"><label for="size3">Large</label> 
+                    </td>
+                </tr>
+
+
+                <!--DRINKS INFO-->
+                <tr> <!--new row-->
+                    <td> <!--new column-->
+                        <label for="guests">Drinks:</label>
+                    </td>
+                    <td> <!--new column-->
+                        <input type="checkbox" name="drink" id="drink1" value="coke"><label for="drink1">Coca Cola</label> <br>
+                        <input type="checkbox" name="drink" id="drink2" value="water"><label for="drink2">Water</label> <br>
+                        <input type="checkbox" name="drink" id="drink3" value="fruitSmoothie"><label for="drink3">Fruit Smoothie</label> <br>
+                        <input type="checkbox" name="drink" id="drink4" value="icedTea"><label for="drink4">Iced Tea</label>
+                        </td>
+                    </td>
+                </tr>
+
+
+                <!--DECORATIONS LABEL-->
+                <tr> <!--new row-->
+                    <td> <!--new column-->
+                        <h2>Decorations</h2> 
+                    </td>
+                    <td></td>
+                </tr>
+
+
+                <tr> <!--CAKE OPTIONS-->
+                    <td> <!--left column-->
+                        <label for="cake">Cake:</label>
+                    </td>
+
+                    <td> <!--right column-->
+                        <select name="cake">
+                            <option value="choco" style="color:rgb(122, 66, 66)">Chocolate</option> <!--when we choose "RED" on the site, which is what shows up for the user, to the computer, we chose "r"-->
+                            <option value="straw" style="color:rgb(236, 63, 63)">Strawberry Cheesecake</option>
+                            <option value="tres" style="color:rgb(208, 172, 27)">Tres Leches</option>
+                            <option value="vani" style="color:rgb(70, 159, 232)">Vanilla</option>
+                            <option value="noCake" style="color:black">I'll bring my own</option>
+                        </select>
+                    </td>
+                </tr>
+
+
+                <!--COLOR SCHEME INFO-->
+                <tr> <!--new row-->
+                    <td> <!--new column-->
+                        <label for="guests">Color Scheme:</label>
+                    </td>
+                    <td> <!--new column-->
+                        <p>Choose a color scheme for the party &#9924;</p>
+                        <input type="color" name="colors" id="colors">
+                    </td>
+                </tr>
+
+
+                <tr> <!--COMMENT INFO-->
+                    <td> <!--left column-->
+                        <label for="comments">Additional Comments:</label>
+                    </td>
+                    <td> <!--right column-->
+                        <textarea name="comments" id="comments" placeholder="Please add any additional comments here." rows="3" cols="35" maxlength="100"></textarea> 
+                    </td>
+                </tr>
+
+
+                <tr> <!--SUBMIT BUTTON INFO-->
+                    <td> <!--left column--></td>
+                    <td> <!--right column - answers/inputs-->
+                        <input type="submit" value="Submit :]"> <!--submit ;] is what shows up on actual site-->
+                    </td>
+                </tr>
+
 
             </tbody>
-
-
-
-
-
         </table>
-
-
-
-
-
-
     </form>
+
 </body>
 </html>
