@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--The type of font we are using-->
+    <meta charset="UTF-8">
+    <!--Tells the -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Romina Florentino">
+    <meta name="description" content="Week 6 Demo">
+    
+    <title>W6 &#9924; Intro to JS</title>
+
+    <style> /*IN DOCUMENT STYLING */
+        body {
+            background-color:grey;
+        }
+    </style>
+</head>
+<body> 
+    <!--it is best practice to have SOME kind of HTML in your <body> when working with JS-->
+    <h1>W6 | Intro to JavaScript Demo</h1>
+
+    <!--use <scipt> AFTER HTML CONTENT, @ end of <body> but before close ---so HTML FIRST-->
+    <script>
+        //in here we write JS -> this is a single line comment
+        /*
+        this is a multi line comment
+        */
+
+        //we must DECLARE variables before we can define or use them
+        var name //this has now been declared as a variable - we can now use it
+        name = "RF" //definition -- assigning data to the name
+
+        //combine the instructions
+        var newName = "Romina"
+
+        //in JS, all numbers are just #'s, don't have to declare INT or FLOAT like in PY
+        var num1 = 10
+        var num2 = 7
+        var sum = num1 + num2
+
+        //OUTPUT------------------
+        //console.log() -> output for TESTING/DEVELOPMENT/DEBUGGING - NOT for the USER -> console is an object, not for user, for US
+        console.log(name)               // one stored value
+        console.log(name, newName)      //2 stored values
+        //LITERAL STRINGS USE `` and allow for stored value inclusion 
+        console.log(`1stNAME:${name} \n2nd NAME: ${newName}`)       //message + stored
+        // \n = new line, just like Python
+
+        //alert() -> creates a pop-up; user might interact with (press OK) before next lines of script are read
+        alert(`${sum} = ${num1} + ${num2}`)
+        console.log(`${sum} = ${num1} + ${num2}`)
+
+        //displays number rounded to the 2nd decimal place -> DOESN'T ACTUALLY ROUND, just DISPLAYS what the 2nd decimal would be
+        alert(`SUM TOTAL: $${sum.toFixed(2)}`)          //this method can only be applied to number objects (the fix method) //object is what comes before . -> in this case, sum
+
+        //INPUT-------------------------
+        //prompt() -> function that creates a pop-up window which includes a text field for user to enter data -- 
+        //user MUST click OK before prompt() will close / any new lines are processed 
+        var last = prompt(`Hi ${name}! Enter your last name:`) // this is a function call
+
+        console.log(`passed the prompt()`)
+        console.log(`Last Name: ${last}`)
+
+        //gaining numbers from the iser - cast as a number!
+        var num = Number(prompt(`Enter a number:`))
+
+        //var multi = num * 10
+
+        console.log(num)              //looks like a number ?
+        console.log(num.toFixed(2))   //but is it a number ?  -> in PYTHON 7 = "7" is FALSE, in JAVA, 7 = "7" is TRUE even if # & string, once you start adding more equal signs tho, it changes what its checking for - value, data type, etc. 
+        //since we accepted data FROM USER (aka input), num becomes a string
+
+    </script>
+
+</body>
+</html>
