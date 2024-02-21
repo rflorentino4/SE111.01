@@ -1,0 +1,225 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Romina Florentino">
+    <meta name="description" content="W7D2 Demo of Pay Calculator Form">
+    <title>W7D2 | Javascript Demo</title>
+</head>
+<body id="bodyId">
+
+    <h1>W7D2 - Javascript Selector &amp; Event Demo</h1>
+
+    <form style="border:1px solid blue;">
+
+        <table>
+
+            <tbody><tr>
+                <!--left side: questions-->
+                <td>
+                    <label for="first" class="questions">FIRST: </label>
+                </td>
+
+                <!--right side: input values-->
+                <td>
+                    <input type="text" name="first" id="first">
+
+                </td>
+            </tr>
+
+            <tr>
+                <!--left side: questions-->
+                <td>
+                    <label for="last" class="questions">LAST: </label>
+                </td>
+
+                <!--right side: input values-->
+                <td>
+                    <input type="text" name="last" id="last">
+
+                </td>
+            </tr>
+
+            <tr>
+                <!--left side: questions-->
+                <td>
+                    <label for="age" class="questions">AGE: </label>
+                </td>
+
+                <!--right side: input values-->
+                <td>
+                    <input type="text" name="age" id="age">
+
+                </td>
+            </tr>
+
+            
+            <tr>
+                <!--left side: questions-->
+                
+                <td>
+                    <br>
+                    <br>
+                   <input type="button" id="enter-button" value="ENTER">
+                </td>
+
+                <!--right side: input values-->
+                <td>
+                    
+
+                </td>
+            </tr>
+
+        </tbody></table>
+
+    </form>
+
+    <br>
+    <br>
+
+    <!--a div to hold some info from the form-->
+
+    <h2 id="hello">Hello World</h2>
+
+    <div id="info" style="border:1px solid black; width:500px; height:200px;">
+    
+    </div><!--# info-->
+
+    <br>
+    <br>
+    <br>
+
+    <!--not just buttons can have click events!-->
+
+    <p id="me">
+        Click!
+    </p>
+
+    <p id="you">
+        Click!
+    </p>
+
+    <input type="button" id="submit" value="COOL STUFF!">
+
+    <br><br><br><br><br>
+    <p>end</p>
+    <!--IN-DOCUMENT JAVASCRIPT BELOW-->
+    <script>
+
+        //we write JS in here 
+        //using JS, select the body element from the file 
+        var body =document.querySelector(`body`) /*to select HTML elements in java, it has to have been declared previously ++ body will hold the ENTIRE element +++ document refers to whatever file we are CURRENTLY on ++++ assignment occurs right to left*/
+        console.log(body) //viewing the element
+        //HTML elements have attributes (properties)
+        //access the atribute value (property) by using dot syntax 
+        var bodyId = body.id //the . is basically 's/shows posession -> this is talking abt the body element/id body
+
+        console.log(`Stored ID: ${bodyId} vs Object Line ID: ${body.id}`)
+
+        body.id = `i-body-d`
+        bodyId = body.id
+
+        console.log(`Stored ID: ${bodyId} vs Object Line ID: ${body.id}`)
+
+        body.style.backgroundColor = "grey" //rgb would look like -> body.style.backgroundColor = "rgb(100, 100, 100)"
+
+        var hello = document.querySelector(`#hello`)
+        console.log(hello)
+        
+        //innerHTML attribute - all elementswith open and close tags have!
+        //access the innerHTML of the <h2> with an id of #hello (stored to 'hello')
+        //hello.innerHTML = hello.innerHTML + ` & Goodbye World !` //SAME as below
+        hello.innerHTML += ` & Goodbye World!` // these 2 lines are the SAME, just diff ways to write
+
+    //  hello.innerHTML = `Goodbye World!` //directly changing it, before we were adding
+
+
+    //  add an event listener to the #enter-button
+        document.querySelector(`#enter-button`).addEventListener(`click`,formConfirm) // this reads, the document's query selector (finding) the #enter button ID +++ adding an event to the object of enter-button +++ addeventlistener requires an object b4 it to run ++ in parenthesis of event listener, we are asking it to take action when it is clicked -> the action is after comma - tis a function here
+        
+        //create some GLOBAL names for the input elements
+        var first = document.getElementById(`first`) // no # bc we are telling it it is an ID already
+        var last = document.getElementById(`last`)
+        var age = document.getElementById(`age`)
+
+        var info = document.getElementById(`info`)
+
+        function formConfirm(event)
+        {
+            //erase info from info div
+            info.innerHTML = `` //tells system info div is EMPTY
+            //power of globals
+            //console.log(first) //every time you click enter, it will record in the developer tools
+            //create some LOCAL names for the input elements' values
+            var fvalue = first.value
+            //console.log(`First's Value: ${fvalue}`)
+
+            var lvalue = last.value
+            var avalue = Number(age.value)
+
+            console.log(`User Entered: \nF: ${fvalue}\nL: ${lvalue}\nA: ${avalue}`)
+            //u can also just reference using object notation if you don't have a need to store the data
+            console.log(`User Entered: \nF: ${first.value}\nL: ${last.value}\nA: ${age.value}`)
+
+            info.innerHTML += `<p><b>First: </b> ${fvalue}</p>`
+            info.innerHTML += `<p><b>Last: </b> ${lvalue}</p>`
+            info.innerHTML += `<p><b>Age: </b> ${avalue}</p>` //<p> tags create new lines
+
+            var activity = ``
+
+            if (avalue>= 21)
+            {
+                activity += `Drink! <br>`
+            }
+
+            if (avalue>= 18)
+            {
+                activity += `Vote! <br>`
+            }
+
+            if (avalue>= 16)
+            {
+                activity += `Drive! <br>`
+            }
+
+            else
+            {
+                activity += `You are too young for fun :[`
+            }
+
+            info.innerHTML += `<br>`
+            info.innerHTML += `<h4>${activity}</h4>`
+
+        }    //formConfirm() CLOSE
+
+        //console.log(`First's Value: ${fvalue}`)
+    
+
+        //event listeners are not stricted to just buttons
+        document.getElementById(`me`).addEventListener(`click`, paraBtn) //this is adding event listener
+
+        var me = document.getElementById(`me`) //this is creating a global element
+
+        var count = 0
+
+        function paraBtn(event)
+        {
+            count += 1
+
+            if(count % 2 == 0) //meaning even #s
+            {
+                me.style.fontSize = "36px"
+                me.style.color= "magenta"
+                me.innerHTML = "Hey you CLICKED me!"
+            }
+            else
+            {
+                me.style.fontSize = "12px"
+                me.style.color= "white"
+                me.innerHTML = "Click me!"
+            }
+        }
+
+	</script>
+	<!--local is within a function, only available in there +++ global can be used anywhere ++ block only exists inside of the block it was created -- block is smallest, local, then global-->
+
+</body></html>
