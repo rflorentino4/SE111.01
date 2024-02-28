@@ -22,7 +22,7 @@
 
 </head>
 <body>
-    <h1 id="start">&#9924;W7 Javascript Pay Calculator Form&#9924;</h1>
+    <h1 id="header">&#9924;W7 Javascript Pay Calculator Form&#9924;</h1>
 
     <!--FORM- Read through to get an idea of what your IDs are!-->
     <form style="border:1px solid blue;">
@@ -119,24 +119,34 @@
         /*
             declare names for each of the following elements in the document: body, h1, input, div, input buttons*/
         var body = document.querySelector(`body`)
-        
         console.log(body)
-
-        //var bodyId = body.id
-
-       ////////////////////////////////////////////////////////////////////////////////////
-
-        var hone = document.querySelector(`#start`)
-
-        console.log(hone)
         //
-        var confirmbutton = document.querySelector(`confirm-button`) 
+        var header = document.getElementById(`header`)
+        console.log(`The header's ID is: # ${header.id}`)
+        //
+        var first = document.querySelector(`#first`)
+        console.log(first)
+        //
+        var last = document.querySelector(`#last`)
+        console.log(last)
+        //
+        var rate = document.querySelector(`#rate`)
+        console.log(rate)
+        //
+        var hours = document.querySelector(`#hours`)
+        console.log(hours)
+        //
+        var enterbutton = document.querySelector(`#enter-button`)
+        console.log(enterbutton)
+        //
+        var confirmbutton = document.querySelector(`#confirm-button`) 
         console.log(confirmbutton)
         //
-        //////////////////////////////////////////////////////////////////////////////////////////////
+        var info = document.querySelector(`#info`)
+        console.log(info)
+        //
 
         //BREAK
-        var start = document.querySelector(`#start`) 
 
         /*    use EITHER .querySelector() OR .getElementById
 
@@ -146,11 +156,14 @@
 
         //PART2------adding event listeners------------------------
         /*
-            add an event listener to the #enter-button that runs a function called "formData"
-
-            add an event listener to the #confirm-button that runs a function called "confirmForm"
+            add an event listener to the #enter-button that runs a function called "formData"*/
+        var form = document.getElementById(`myForm`)
+        function formdata(event) {event.formData()}
+        form.addEventListener(`submit`, formdata)
+        /*    add an event listener to the #confirm-button that runs a function called "confirmForm"
         */
-
+        function confirmdata(event) {event.confirmData()}
+        form.addEventListener(`click`, confirmData)
 
         //PART3------building event functions----------------------
         /*
