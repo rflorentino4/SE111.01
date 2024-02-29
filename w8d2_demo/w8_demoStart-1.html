@@ -192,7 +192,7 @@
             //below prevents refresh of the page when submit button is clicked 
             var form = document.getElementById(`myForm`)
             function handleForm(event) {event.preventDefault()}
-            form.addEventListener(`submit`, handleForm) //paramets are values a function NEEDS to do its job -- here its job is to run at event, curly brackets show that event is an object and after the dot is what it is being asked to do
+            form.addEventListener(`submit`, handleForm) //parameters are values a function NEEDS to do its job -- here its job is to run at event, curly brackets show that event is an object and after the dot is what it is being asked to do
             //to run an eventlistener, put object then what the func you want it to do WITHOUT parenthesis
             //below creates the event listener to run the basicInfo function which runs when the submit button is clicked 
             submit.addEventListener(`click`, basicInfo) //this is quickest way to do it
