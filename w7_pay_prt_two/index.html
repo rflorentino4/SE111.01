@@ -15,7 +15,7 @@
         background-color: #ffadc9;
     }
 
-    #start {
+    #header , #subhead {
         text-align: center;
     }
 </style>
@@ -23,9 +23,12 @@
 </head>
 <body>
     <h1 id="header">&#9924;W7 Javascript Pay Calculator Form&#9924;</h1>
+    <h3 id="subhead">Please fill out the following sections to calculate your final results.</h3>
+    <br>
+    <h2>Required Information:</h2>
 
     <!--FORM- Read through to get an idea of what your IDs are!-->
-    <form style="border:1px solid blue;">
+    <form style="border:1px solid black; width:500px; height:200px;">
         <table>
             <tr>
                 <!--left side: questions-->
@@ -168,14 +171,18 @@
                 -declare and create a "fullName" using the first and last values
                 -declare and create: grossPay, taxAmount, netPay
                 -console.log() the 4 values: fullName, grossPay, taxAmount, netPay
-       /////////////////////         -write the information, with bolded labels in paragraph elements, to the #info div's innerHTML
+                -write the information, with bolded labels in paragraph elements, to the #info div's innerHTML
                 -ensure all monetary values are displayed to the second decimal place (.toFixed(2))
 
                     HINT EX: `<p><b>Full Name:</b> ${fullName}`
 
                 REMEMBER: form text field data is treated as a STRING so you will most likely need the Number() 
         */
-       function formData(e)
+        alert(`Welcome to the JS Pay Calculator! Click "OK" to continue.`)
+        var weeks = Number(prompt(`Enter the number of weeks you've worked:`));
+        var tax = Number(prompt(`Enter your tax amount as a whole number (ex: 20 for 20%)`));
+        //
+        function formData(e)
        {
             var firstNameValue = first.value;
             var lastNameValue = last.value;
@@ -184,15 +191,19 @@
             //
             var fullName = firstNameValue + ` ` + lastNameValue;
             //
+            function formData(event) {event.preventDefault()} //I've tested the form with and without this line, and I don't see a difference in the output -> on my screen, it doesn't refresh at all. I'm not sure what I'm doing wrong.
+            //
             var grossPay;
             var netPay;
             var taxAmount;
-            var weeks = Number(prompt(`Enter the number of weeks:`));
-            var tax = Number(prompt(`Enter the tax amount as a whole number (ex: 20 for 20%)`) / 100);
+            var weeksValue = weeks.value;
+            var taxValue = tax.value;
+            tax = tax / 100;
             var grossPay = hoursValue * rateValue * weeks;
             var taxAmount =  grossPay * tax;
             var netPay = grossPay - taxAmount;
-            console.log(`${fullName}'s net pay is $${netPay.toFixed(2)}, their gross pay is $${grossPay.toFixed(2)}, and their tax amount is $${taxAmount.toFixed(2)}.`);
+            console.log(`${fullName}'s net pay is $${netPay.toFixed(2)}.\nTheir gross pay was $${grossPay.toFixed(2)}.\nTotal tax amount was $${taxAmount.toFixed(2)}.`);
+            info.innerHTML = `<p><b>${fullName}'s net pay</b> is $${netPay.toFixed(2)}.<br>Their <b>gross pay</b> was $${grossPay.toFixed(2)}.<br>Total <b>tax amount</b> was $${taxAmount.toFixed(2)}.`;
        } ////////////////////////////
         /*
             confirmForm() instructions:
@@ -215,7 +226,23 @@
 
 
        function confirmData(event)
-       {
+       {    
+            var firstNameValue = first.value;
+            var lastNameValue = last.value;
+            var rateValue = rate.value;
+            var hoursValue = hours.value;
+            //
+            var fullName = firstNameValue + ` ` + lastNameValue;
+            //
+            var grossPay;
+            var netPay;
+            var taxAmount;
+            var weeksValue = weeks.value;
+            var taxValue = tax.value;
+            var grossPay = hoursValue * rateValue * weeks;
+            var taxAmount =  grossPay * tax;
+            var netPay = grossPay - taxAmount;
+            alert(`${fullName}'s net pay is $${netPay.toFixed(2)}.\nTheir gross pay was $${grossPay.toFixed(2)}.\nTotal tax amount was $${taxAmount.toFixed(2)}.`)
 
        }//confirmData()
 
