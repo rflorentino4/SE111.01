@@ -45,7 +45,7 @@
         <!--footer for final notes of game site-->
         <div id="footer">
 
-            <p>&copy; -YOUR NAME GOES HERE- | SE111 | 202420</p>
+            <p>&copy; -Romina Florentino- | SE111 | 202420</p>
             <h6><a href="../../index.html">KT's Repo Index</a></h6> <!--keep this KT's repo link ;] yours goes in the #nav aread-->
 
             <!--screeshot of validation below-->
@@ -67,32 +67,32 @@
         //---INTRO TO JS ARRAYS & OBJECTS-------------------------------------------------------------------------
         //create a new array of names and populate it!
         var people = [
-            "Katie", 
-            "Marty", 
-            "Sal", 
-            "Jay", 
-            "Tim",
-            "Jordan"
+            "Allen", 
+            "Chelsea", 
+            "Daniel", 
+            "Kevin", 
+            "Mina",
+            "Michelle"
         ]
 
         //array name talks about WHOLE set
         console.log(people)
 
         //array name + KEY [index] talks about ONE value
-        console.log(people[2])//change the [#] to look at a different name
+        console.log(people[0])//change the [#] to look at a different name
 
         //everything in JS is an object, so arrays take on properties whenever built, like .length
         console.log(`There are ${people.length} names in the 'people' array`)
 
         //add a name to the array 
-        people[6] = "James" //long way :[ requires knowing next index #
+        people[6] = "Amber" //long way :[ requires knowing next index #
         console.log(people) //7ppl
 
-        people[people.length] = "Scott" 
+        people[people.length] = "Dan" 
         //array.length will always give you the next available index #
         console.log(people) //8ppl
 
-        people.push("George")   //.append() in Python
+        people.push("Destiny")   //.append() in Python
         console.log(people) //9ppl
 
         people.push(prompt("Enter a name to add to the array: "))
@@ -103,15 +103,15 @@
 
         //BUILD A PARALLEL ARRAY TO people THAT HOUSES fave animals
         var faveAnimals = [
-            "elephant", 
-            "dog", 
-            "birds", 
-            "jaguar",
-            "meerkat",
-            "panda bear",
-            "duck",
-            "dragon",
-            "emu"
+            "german shepherd", 
+            "rat", 
+            "meerkat", 
+            "direwolf",
+            "lemur",
+            "polar bear",
+            "ferret",
+            "english bulldog",
+            "duck"
         ]
 
         //ask for last person's fave animal via prompt
@@ -130,12 +130,12 @@
 
         //BUILDING OBJECTS
         var pet1 = {
-            title: "Mr.",
-            fname: "George",
-            mname: "Bulleit",
+            title: "Ms.",
+            fname: "Georgina",
+            mname: "Bullet",
             lname: "Wayne", //because BATMAN
-            age: 10,
-            faveToy: "Nylo Bone",
+            age: 8,
+            faveToy: "Pork Bone",
             hasSiblings: true, 
             info: function() {
                 alert(`
@@ -163,13 +163,13 @@
         }
 
         var pet2 = {
-            title: "Miss.",
-            fname: "Marlowe",
-            mname: "Charlie-Mae",
-            lname: "Marple", //because alliteration + Mrs. Marple deteciving
-            age: 3.5,
-            faveToy: "alpaca baby",
-            hasSiblings: true, 
+            title: "Mr.",
+            fname: "Charles",
+            mname: "Jay",
+            lname: "Smith", //because alliteration + Mrs. Marple deteciving
+            age: 6,
+            faveToy: "Tennis Ball",
+            hasSiblings: false, 
             info: function() {
                 alert(`
                 ${this.title} ${this.fname} ${this.mname} ${this.lname} is ${this.age} years old!\n
@@ -187,7 +187,13 @@
         //---ARRAYS POPULATED WITH OBJECTS------------------------------------------------------------------------
 
         //build array first
-        var pets = []
+        var pets = [
+            "ferret",
+            "dog",
+            "cat",
+            "raccoon",
+            "panda"
+        ]
 
         //add objects to the array - pet1 and pet2
         pets.push(pet1)
