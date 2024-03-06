@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W9 | Demo</title>
+    <!--query selector only grabs the first of something - so the first tag, but not the other times it is used in ur doc!!-->
+    <!--.parent of something gives you what the child is inside of -->
+    <!--<p> Hello World! </p> ---- hello world is text node, p is element-->
+    <style>
+
+        .red {
+        
+            border:1px solid red;
+            
+            margin-bottom:10px;
+            
+            min-height:20px;
+        
+         }
+        
+    </style>
+</head>
+<body>
+
+    <h1>Week 9 Demo & Creating Elements in JS</h1>
+    <h3><i>Using the .createElement() & .appendChild() methods</i></h3>
+
+    <script>
+        /*WEEK 9 JAVASCRIPT NOTES!
+
+        console.dir()---selecting with this shows the element in console as an   objectthis is helpful to see children/parent/and node information and array index placement
+        .querySelector()---selects an element within the html needs to be suplied a valid selector (id, class, element type)
+        .children[]---gives access to a child element (element inside the object element; need to include index # in the []
+        .parentElement---gives access to the parent or containing element; similar to ../ in termina file paths
+        .setAttribute()---creates a new attribute and aplies to the element preceding the . needs to be supplied an attribute type and value for said attribute
+        .createElement()---creates an HTML element* needs to be supplied the element/tag type requires appendChild() second step
+        .createTextNode()---creates a text node (text content) so it can be applied to elements 
+            * needs to be supplied text content / string values requires appendChild() second step
+            * needs .appendChild() before it will be added to the page
+        .appendChild()---add an element or text node inside of a pre-exisiting element (container/parent) this will allow for the element/node to be added to the HTML aka appear on page
+        */
+
+        var people = [ //array bc flat bracket - best for ordered lists but populated with OBJECTS bc curly braces
+
+            {first:"Daenerys", last:"Targaryen", credit:"Queen of Meereen Khaleesi of the Great Grass Sea Mother of Dragons The Unburnt Breaker of Chains Television: Queen of the Andals and the First Men Protector of the Seven Kingdoms Lady of Dragonstone"},
+
+            {first:"Cersei", last:"Lannister", credit:"Protector of the Realm Lady Paramount of the Westerlands Lady of Casterly Rock Light of the West Queen Dowager Queen Regent Television: Queen of the Andals and the First Men" },
+
+            {first:"Yara", last:"Greyjoy", credit:"Queen of the Iron Islands and Lady Reaper of Pyke"},
+
+            {first:"Margaery", last:"Tyrell", credit:"Queen of the Seven Kingdoms"},
+
+            {first:"A girl", last:"has no name"}
+
+            ]
+
+            console.log(people) //entire array so all values at once VS
+            console.log(people[0]) //just the first object/value in the array
+            console.log(people[0].last) //one specific value of the object in the array
+
+            var body = document.querySelector(`body`) //selects the body element and stores the entire element in variable body in script now
+
+            console.log(body)
+            console.dir(body) // view as an object, shows you all the properties/things you can do with it --ex: onkeydown: sometimes happens when user clicks button
+
+            console.log(body.children[1]) //selects the 2nd child of the body element(h1) and logs it to console
+            console.log(body.parentElement) //selects the parent of the body element (html) and logs it
+
+            //standard arrays use standard for loops
+            for (let i=0; i< people.length; i++) { //if ppl changes, this loop will change to continue running no matter the length ----middle is always how long loop will run, last is how you get out of loop - it increments by one every time so that even if u start at 0, eventually, the loop will end when it reaches the length of the array
+                //for every value (object) in the array
+
+                //create the element to hold content first;assign it attributes
+                var tempDiv = document.createElement(`div`) //creates a div element and stores it in variable tempDiv
+                tempDiv.setAttribute(`id`, people[i].first) //creates an id attribute and assigns it a value ----chose i bc it changes constantly and will be unique to each
+                tempDiv.setAttribute(`class`, `red`) //creates a class atrribute and assigns it a value of red
+
+                //for every property in the current object (people[i]), create a <p> and populate it with the property value as text content
+                for (let key in people[i])
+                {
+                    //for every property in the object
+                    var p = document.createElement(`p`) //creates a p element and stores it in variable p
+                    var text = document.createTextNode(people[i][key]) //creates a text node and stores it in variable text ++++ can't be dot bc it would only pull one thing --we use flat braces key to signify we want the ENTIRE value of the key
+
+                    p.appendChild(text) //adds the text node to the p element, now p is parent of text
+                    tempDiv.appendChild(p) //adds the p element to the tempDiv element, now tempDiv is parent of p which is parent of text
+                }
+
+                //add the tempDiv to the end of the bdoy element's content
+                body.appendChild(tempDiv) //adds the tempDiv to the end of the body element's content
+
+            }
+    </script>
+    
+</body>
+</html>
