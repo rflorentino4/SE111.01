@@ -7,12 +7,20 @@
 <title>Week 9 Files</title>
 <style type="text/css">
 	.border{border:1px solid rgb(91, 18, 147);}
+	#Spongebob {background-color:#fcf372;}
+	#Patrick {background-color:#f2a8ab;}
+	#Squidward {background-color:#a2c9b9;}
+	#Eugene {background-color:#f93f3a;}
+	#Sheldon {background-color:#68a079;}
+	#Karen {background-color:#5988e4;}
+	#Sandy {background-color:#d39c63;;}
+
 </style>
 </head>
 
 <body>
 	<h1>Week 9 | Creating Elements in JS</h1>
-	<h3><i>Utilizing the .createElement() & .append.Child() methods</i></h3>
+	<h3><i>Utilizing the .createElement() & .appendChild() methods</i></h3>
 
 <script type="text/javascript">
 	//Use this Array of objects to complete the assignment.
@@ -33,8 +41,19 @@
 	var body = document.querySelector(`body`) //selects the ENTIRE body element and stores in the variable "body" in the script now
 	console.log(body) //shows the entire body element in the console as an object (?)
 	console.dir(body) //shows all the possibilities for actions you can perform on this object (?)
-	console.log(body.children[0]) //
-	
+
+	for (let i=0; i<people.length;i++) {
+		var tempDiv = document.createElement(`div`) //creates a new div element and stores it in the variable "tempDiv" in the script now
+		tempDiv.setAttribute(`id`, people [i].first) //creates a new attribute called "id" and assigns it the value of the first name of the object in the array
+		tempDiv.setAttribute(`class`, `border`) //creates a new attribute called "class" and assigns it the value of ".border" to create a border around the div
+		for (let key in people [i]) {
+			var p = document.createElement(`p`) //creates a new p element and stores it in the variable "p" in the script now
+			var text = document.createTextNode(people[i][key]) //creates a new text node and stores it in the variable "text" in the script now
+			p.appendChild(text) //adds the text node to the p element
+			tempDiv.appendChild(p) //adds the p element to the div element
+		}
+		body.appendChild(tempDiv) //adds the div element to the body element
+	}
 </script>
 </body>
 
