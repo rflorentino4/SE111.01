@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Romina Florentino"> 
+<meta name="description" content="Week 9 Homework Assignment">
+<title>Week 9 Files</title>
+<style type="text/css">
+	.border{border:1px solid rgb(91, 18, 147);}
+</style>
+</head>
+
+<body>
+	<h1>Week 9 | Creating Elements in JS</h1>
+	<h3><i>Utilizing the .createElement() & .append.Child() methods</i></h3>
+
+<script type="text/javascript">
+	//Use this Array of objects to complete the assignment.
+	var people =[
+		{first:"Spongebob", last:"Squarepants", credit:"Fry cook at the Krusty Krab"},
+		{first:"Patrick", last:"Star", credit:"I'm not sure what he does exactly..." },
+		{first:"Squidward", last:"Tentacles", credit:"Spongebob's coworker at the Krusty Krab" },
+		{first:"Eugene", last:"Krabs", credit:"Spongebob's boss and the owner of the Krusty Krab" },
+		{first:"Sheldon", last:"Plankton", credit:"Mr. Krab's arch-nemesis" },
+		{first:"Karen", last:"Plankton", credit:"Plankton's sentient computer" },
+		{first:"Sandy", last:"Cheeks", credit:"Explorer, scientists, and a squirrel from Texas who now lives underwater" }
+	]
+
+	console.log(people) //entire array is logged
+	console.log(people[1]) //just the first object in the array - so Patrick
+	console.log(people[1].last) //just the last name of the first object in the array - so Star
+
+	var body = document.querySelector(`body`) //selects the ENTIRE body element and stores in the variable "body" in the script now
+	console.log(body) //shows the entire body element in the console as an object (?)
+	console.dir(body) //shows all the possibilities for actions you can perform on this object (?)
+	console.log(body.children[0]) //
+	
+</script>
+</body>
+
+</html>

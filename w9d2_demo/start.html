@@ -83,14 +83,11 @@
                     //for every property in the object
                     var p = document.createElement(`p`) //creates a p element and stores it in variable p
                     var text = document.createTextNode(people[i][key]) //creates a text node and stores it in variable text ++++ can't be dot bc it would only pull one thing --we use flat braces key to signify we want the ENTIRE value of the key
-
                     p.appendChild(text) //adds the text node to the p element, now p is parent of text
                     tempDiv.appendChild(p) //adds the p element to the tempDiv element, now tempDiv is parent of p which is parent of text
                 }
-
-                //add the tempDiv to the end of the bdoy element's content
-                body.appendChild(tempDiv) //adds the tempDiv to the end of the body element's content
-
+                //add the tempDiv to the end of the body element's content
+                body.appendChild(tempDiv) //adds the tempDiv to the end of the body element's content +++ appendChild ALWAYS adds to the end of selected element
             }
     </script>
     
